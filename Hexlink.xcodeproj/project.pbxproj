@@ -17,6 +17,8 @@
 		2F1CA645290E5B0100565CEB /* HLLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1CA643290E5B0100565CEB /* HLLoginView.swift */; };
 		2F1CA647290F19B800565CEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F1CA646290F19B800565CEB /* GoogleService-Info.plist */; };
 		2F1CA64A290F1C3C00565CEB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2F1CA649290F1C3C00565CEB /* FirebaseAuth */; };
+		2FBFEEF5290F9EFE001C9F68 /* HLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFEEF4290F9EFE001C9F68 /* HLHomeViewController.swift */; };
+		2FBFEEF7290F9F10001C9F68 /* HLHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFEEF6290F9F10001C9F68 /* HLHomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		2F1CA642290E5B0100565CEB /* HLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLLoginViewController.swift; sourceTree = "<group>"; };
 		2F1CA643290E5B0100565CEB /* HLLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLLoginView.swift; sourceTree = "<group>"; };
 		2F1CA646290F19B800565CEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2FBFEEF4290F9EFE001C9F68 /* HLHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLHomeViewController.swift; sourceTree = "<group>"; };
+		2FBFEEF6290F9F10001C9F68 /* HLHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 		2F1CA611290E597000565CEB /* Hexlink */ = {
 			isa = PBXGroup;
 			children = (
+				2FBFEEF6290F9F10001C9F68 /* HLHomeView.swift */,
+				2FBFEEF4290F9EFE001C9F68 /* HLHomeViewController.swift */,
 				2F1CA643290E5B0100565CEB /* HLLoginView.swift */,
 				2F1CA642290E5B0100565CEB /* HLLoginViewController.swift */,
 				2F1CA612290E597000565CEB /* AppDelegate.swift */,
@@ -266,6 +272,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F1CA645290E5B0100565CEB /* HLLoginView.swift in Sources */,
+				2FBFEEF7290F9F10001C9F68 /* HLHomeView.swift in Sources */,
+				2FBFEEF5290F9EFE001C9F68 /* HLHomeViewController.swift in Sources */,
 				2F1CA613290E597000565CEB /* AppDelegate.swift in Sources */,
 				2F1CA615290E597000565CEB /* SceneDelegate.swift in Sources */,
 				2F1CA644290E5B0100565CEB /* HLLoginViewController.swift in Sources */,

@@ -32,17 +32,19 @@ class HLLoginViewController: UIViewController, HLLoginViewDelegate {
     func loginViewLoginButtonTapped() {
         oauthProvider = OAuthProvider(providerID: "twitter.com")
         oauthProvider.getCredentialWith(nil) { credential, error in
-            print("getCredential")
             guard error == nil else {
                 print("ⓧ Error in signin : \(error?.localizedDescription ?? "")")
                 return
             }
             guard let credential = credential else { return }
             Auth.auth().signIn(with: credential) { result, error in
-              guard error == nil else {
-                  print("ⓧ Error in signin : \(error?.localizedDescription ?? "")")
-                  return
-              }
+                guard error == nil else {
+                    print("ⓧ Error in signin : \(error?.localizedDescription ?? "")")
+                    return
+                }
+                let homeViewController = HLHomeViewController()
+                homeViewController.modalPresentationStyle = .fullScreen
+                self.present(homeViewController, animated: false)
             }
         }
     }
