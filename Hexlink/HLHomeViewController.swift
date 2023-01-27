@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
+
 class HLHomeViewController: UIViewController, HLHomeViewDelegate {
-    
+  
     private var homeView: HLHomeView = HLHomeView()
     
     override func viewDidLayoutSubviews() {
@@ -18,7 +19,7 @@ class HLHomeViewController: UIViewController, HLHomeViewDelegate {
         homeView.delegate = self
         homeView.frame = self.view.frame
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
