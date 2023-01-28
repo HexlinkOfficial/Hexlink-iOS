@@ -17,6 +17,7 @@
 		2F1CA645290E5B0100565CEB /* HLLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1CA643290E5B0100565CEB /* HLLoginView.swift */; };
 		2F1CA647290F19B800565CEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F1CA646290F19B800565CEB /* GoogleService-Info.plist */; };
 		2F1CA64A290F1C3C00565CEB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2F1CA649290F1C3C00565CEB /* FirebaseAuth */; };
+		2F594E412983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F594E402983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift */; };
 		2FBFEEF5290F9EFE001C9F68 /* HLHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFEEF4290F9EFE001C9F68 /* HLHomeViewController.swift */; };
 		2FBFEEF7290F9F10001C9F68 /* HLHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBFEEF6290F9F10001C9F68 /* HLHomeView.swift */; };
 /* End PBXBuildFile section */
@@ -52,6 +53,7 @@
 		2F1CA642290E5B0100565CEB /* HLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLLoginViewController.swift; sourceTree = "<group>"; };
 		2F1CA643290E5B0100565CEB /* HLLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLLoginView.swift; sourceTree = "<group>"; };
 		2F1CA646290F19B800565CEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2F594E402983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLQRCodeScannerViewController.swift; sourceTree = "<group>"; };
 		2FBFEEF4290F9EFE001C9F68 /* HLHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLHomeViewController.swift; sourceTree = "<group>"; };
 		2FBFEEF6290F9F10001C9F68 /* HLHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLHomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				2FBFEEF4290F9EFE001C9F68 /* HLHomeViewController.swift */,
 				2F1CA643290E5B0100565CEB /* HLLoginView.swift */,
 				2F1CA642290E5B0100565CEB /* HLLoginViewController.swift */,
+				2F594E402983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift */,
 				2F1CA612290E597000565CEB /* AppDelegate.swift */,
 				2F1CA614290E597000565CEB /* SceneDelegate.swift */,
 				2F1CA61B290E597000565CEB /* Assets.xcassets */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F1CA645290E5B0100565CEB /* HLLoginView.swift in Sources */,
+				2F594E412983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift in Sources */,
 				2FBFEEF7290F9F10001C9F68 /* HLHomeView.swift in Sources */,
 				2FBFEEF5290F9EFE001C9F68 /* HLHomeViewController.swift in Sources */,
 				2F1CA613290E597000565CEB /* AppDelegate.swift in Sources */,
@@ -434,12 +438,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GRLJ83K6M4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hexlink/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan the QE code";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,12 +467,15 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GRLJ83K6M4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hexlink/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan the QE code";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
