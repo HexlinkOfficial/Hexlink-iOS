@@ -60,13 +60,8 @@ class HLQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputOb
                 strongSelf.captureSession.startRunning()
             }
         }
-    }
-
-    func failed() {
-        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default))
-        present(ac, animated: true)
-        captureSession = nil
+        
+        view.backgroundColor = UIColor(red: 160, green: 160, blue: 160, alpha: 0.5);
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -77,6 +72,16 @@ class HLQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputOb
         }
     }
 
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+
+//MARK: AVCaptureMetadataOutputObjectsDelegate
+    
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureSession.stopRunning()
 
@@ -90,15 +95,25 @@ class HLQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputOb
         dismiss(animated: true)
     }
 
+//MARK: Helper Methods
+    
     func found(code: String) {
         print(code)
     }
-
-    override var prefersStatusBarHidden: Bool {
-        return true
+    
+    func failed() {
+        let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default))
+        present(ac, animated: true)
+        captureSession = nil
     }
-
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+    
+    func simpleShapeLayer() {
+        self.createRectangle()
+     
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = self.path.cgPath
+     
+        self.layer.addSublayer(shapeLayer)
     }
 }
