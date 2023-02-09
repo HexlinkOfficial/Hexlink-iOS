@@ -438,7 +438,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GRLJ83K6M4;
+				DEVELOPMENT_TEAM = 3G8W7M85MG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hexlink/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan the QE code";
@@ -452,7 +452,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wallet.Hexlink;
+				PRODUCT_BUNDLE_IDENTIFIER = authenticator.Hexlink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -467,7 +467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GRLJ83K6M4;
+				DEVELOPMENT_TEAM = 3G8W7M85MG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hexlink/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan the QE code";
@@ -481,7 +481,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = wallet.Hexlink;
+				PRODUCT_BUNDLE_IDENTIFIER = authenticator.Hexlink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
