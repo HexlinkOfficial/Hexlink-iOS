@@ -22,7 +22,7 @@ class HLQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputOb
         let cornerRadius = 10.0
         let previewWidth = view.frame.width * 0.8
         let previewOriginX = view.frame.width * 0.1
-        let previewOriginY = view.frame.midY - previewWidth / 2
+        let previewOriginY = view.frame.midY - previewWidth / 2 - 50
         let previewFrame = CGRect(origin: CGPoint(x: previewOriginX, y: previewOriginY),
                                   size: CGSize(width: previewWidth, height: previewWidth))
 
@@ -43,9 +43,11 @@ class HLQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputOb
 
         connerBorderLayer(rect: previewFrame, radius: cornerRadius)
 
-        view.layer.backgroundColor = CGColor(red: 160, green: 160, blue: 160, alpha: 0.5)
+        view.layer.backgroundColor = UIColor.lightGray.cgColor
+        
+        setNavigationBar()
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
@@ -55,9 +57,9 @@ class HLQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputOb
     }
 
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .portrait
     }
@@ -76,8 +78,21 @@ class HLQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputOb
 
         dismiss(animated: true)
     }
+    
+    @objc func closeButtonTapped() {
+        print("close button tapped")
+        self.dismiss(animated: true)
+    }
 
 //MARK: Helper Methods
+    
+    func setNavigationBar() {
+        let closeItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close,
+                                        target: self,
+                                        action: #selector(closeButtonTapped))
+        self.navigationItem.leftBarButtonItem  = closeItem
+        
+    }
     
     func found(code: String) {
         print(code)

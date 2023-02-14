@@ -12,6 +12,8 @@ protocol HLHomeViewDelegate: AnyObject {
     func homeViewSendButtonTapped()
 }
 
+let sendButtonRadius: CGFloat = 100;
+
 final class HLHomeView: UIView {
     
     weak var delegate: HLHomeViewDelegate?
@@ -40,8 +42,11 @@ final class HLHomeView: UIView {
         subtitleLabel.textAlignment = .center
         addSubview(subtitleLabel)
         
-        sendButton.setTitle("Send", for: .normal)
+        sendButton.setTitle("Add", for: .normal)
         sendButton.backgroundColor = UIColor.gray
+        sendButton.layer.cornerRadius = 0.5 * sendButtonRadius
+        sendButton.clipsToBounds = true
+        
         sendButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
         addSubview(sendButton)
     }
@@ -55,10 +60,8 @@ final class HLHomeView: UIView {
         let subtitleLabelSize = subtitleLabel.sizeThatFits(self.frame.size)
         subtitleLabel.frame = CGRectMake(0, titleLabel.frame.maxY + 10, self.frame.width, subtitleLabelSize.height)
         
-        let sendButtonWidth : CGFloat = 200
-        let sendButtonHeight : CGFloat = 50
-        sendButton.frame = CGRectMake((self.frame.width - sendButtonWidth) / 2,
-                                       600, sendButtonWidth, sendButtonHeight)
+        sendButton.frame = CGRectMake((self.frame.width - sendButtonRadius) / 2, self.frame.height - 200,
+                                      sendButtonRadius, sendButtonRadius)
     }
     
     @objc func sendButtonAction(sender: UIButton) {

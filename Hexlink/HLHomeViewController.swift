@@ -27,6 +27,7 @@ class HLHomeViewController: UIViewController, HLHomeViewDelegate {
     }
     
     func homeViewSendButtonTapped() {
-        print("send button tapped")
+        print("Add button tapped")
+        self.present(UINavigationController(rootViewController: HLQRCodeScannerViewController()), animated: true)
     }
 }

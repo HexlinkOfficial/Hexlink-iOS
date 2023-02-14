@@ -9,7 +9,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.271105187496-d6i94ppcp0hkt2gcmtbhldr8ulc7fco5</string>
+				<string>com.googleusercontent.apps.271105187496-l1ovhkkp6ug8s2qhoo0muvfo2h4l98h6</string>
 			</array>
 		</dict>
 	</array>
@@ -30,5 +30,13 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>processing</string>
+		<string>remote-notification</string>
+	</array>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
 </dict>
 </plist>
