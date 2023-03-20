@@ -9,16 +9,19 @@ import Foundation
 import UIKit
 
 protocol HLHomeViewDelegate: AnyObject {
+    func homeViewSetupButtonTapped()
     func homeViewSendButtonTapped()
 }
 
 let sendButtonRadius: CGFloat = 100;
+let setupButtonRadius: CGFloat = 100;
 
 final class HLHomeView: UIView {
     
     weak var delegate: HLHomeViewDelegate?
     let titleLabel: UILabel = UILabel()
     let subtitleLabel: UILabel = UILabel()
+    let setupButton: UIButton = UIButton()
     let sendButton: UIButton = UIButton()
 
     override init(frame: CGRect) {
@@ -42,9 +45,17 @@ final class HLHomeView: UIView {
         subtitleLabel.textAlignment = .center
         addSubview(subtitleLabel)
         
-        sendButton.setTitle("Add", for: .normal)
+        setupButton.setTitle("setup", for: .normal)
+        setupButton.backgroundColor = UIColor.gray
+//        setupButton.layer.cornerRadius = 0.5 * sendButtonRadius
+        setupButton.clipsToBounds = true
+        
+        setupButton.addTarget(self, action: #selector(setupButtonAction), for: .touchUpInside)
+        addSubview(setupButton)
+        
+        sendButton.setTitle("send", for: .normal)
         sendButton.backgroundColor = UIColor.gray
-        sendButton.layer.cornerRadius = 0.5 * sendButtonRadius
+//        sendButton.layer.cornerRadius = 0.5 * sendButtonRadius
         sendButton.clipsToBounds = true
         
         sendButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
@@ -60,8 +71,15 @@ final class HLHomeView: UIView {
         let subtitleLabelSize = subtitleLabel.sizeThatFits(self.frame.size)
         subtitleLabel.frame = CGRectMake(0, titleLabel.frame.maxY + 10, self.frame.width, subtitleLabelSize.height)
         
-        sendButton.frame = CGRectMake((self.frame.width - sendButtonRadius) / 2, self.frame.height - 200,
+        setupButton.frame = CGRectMake((self.frame.width - setupButtonRadius) / 2, self.frame.height - 200,
+                                       setupButtonRadius, setupButtonRadius)
+        
+        sendButton.frame = CGRectMake((self.frame.width - sendButtonRadius) / 2, setupButton.frame.minY - 110,
                                       sendButtonRadius, sendButtonRadius)
+    }
+    
+    @objc func setupButtonAction(sender: UIButton) {
+        self.delegate?.homeViewSetupButtonTapped()
     }
     
     @objc func sendButtonAction(sender: UIButton) {
