@@ -519,7 +519,7 @@
 				CODE_SIGN_ENTITLEMENTS = Hexlink/Hexlink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GRLJ83K6M4;
+				DEVELOPMENT_TEAM = 3G8W7M85MG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hexlink/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan the QE code";
@@ -549,7 +549,7 @@
 				CODE_SIGN_ENTITLEMENTS = Hexlink/Hexlink.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GRLJ83K6M4;
+				DEVELOPMENT_TEAM = 3G8W7M85MG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Hexlink/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need the camera to scan the QE code";
