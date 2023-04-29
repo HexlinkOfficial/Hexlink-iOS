@@ -8,26 +8,16 @@
 import Foundation
 import UIKit
 
-protocol HLHomeViewDelegate: AnyObject {
-    func homeViewSetupButtonTapped()
-    func homeViewSendButtonTapped()
-}
-
 struct AccountData : Codable {
     var name: String
 }
 
-let sendButtonRadius: CGFloat = 100;
-let setupButtonRadius: CGFloat = 100;
-
-final class HLHomeView: UIView, UITableViewDataSource {
+final class HLHomeView: UIView, UITableViewDataSource, UITableViewDelegate {
     
-    weak var delegate: HLHomeViewDelegate?
     let _titleLabel: UILabel = UILabel()
     let _subtitleLabel: UILabel = UILabel()
+    let _addAccountButton: UIButton = UIButton()
     let _accountTableView: UITableView = UITableView()
-    let _setupButton: UIButton = UIButton()
-    let _sendButton: UIButton = UIButton()
     var _accounts: [AccountData]?;
 
     override init(frame: CGRect) {
@@ -35,6 +25,8 @@ final class HLHomeView: UIView, UITableViewDataSource {
         
         _accounts = [AccountData(name: "Hexlink1"), AccountData(name: "Hexlink2")];
         setupViews()
+        
+        self.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
     }
 
     required init?(coder: NSCoder) {
@@ -45,65 +37,42 @@ final class HLHomeView: UIView, UITableViewDataSource {
         backgroundColor = .white
 
         _titleLabel.text = "Hexlink"
-        _titleLabel.textAlignment = .center
+        _titleLabel.textAlignment = .left
+        _titleLabel.font = UIFont.boldSystemFont(ofSize: 32)
         addSubview(_titleLabel)
-            
-        _subtitleLabel.text = "Home"
-        _subtitleLabel.textAlignment = .center
-        addSubview(_subtitleLabel)
+        
+        _addAccountButton.setImage(UIImage(systemName: "plus"), for: UIControl.State.normal)
+        addSubview(_addAccountButton)
         
         _accountTableView.dataSource = self;
-        _accountTableView.register(UITableViewCell.self, forCellReuseIdentifier: "AccountCell")
+        _accountTableView.delegate = self;
+        _accountTableView.register(HLAccountTableViewCell.self, forCellReuseIdentifier: "AccountCell")
+        _accountTableView.separatorStyle = .none
+        _accountTableView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
         addSubview(_accountTableView);
-        
-        _setupButton.setTitle("setup", for: .normal)
-        _setupButton.backgroundColor = UIColor.gray
-//        _setupButton.layer.cornerRadius = 0.5 * sendButtonRadius
-        _setupButton.clipsToBounds = true
-        
-        _setupButton.addTarget(self, action: #selector(setupButtonAction), for: .touchUpInside)
-        addSubview(_setupButton)
-        
-        _sendButton.setTitle("send", for: .normal)
-        _sendButton.backgroundColor = UIColor.gray
-//        _sendButton.layer.cornerRadius = 0.5 * sendButtonRadius
-        _sendButton.clipsToBounds = true
-        
-        _sendButton.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
-        addSubview(_sendButton)
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         let titleSize = _titleLabel.sizeThatFits(self.frame.size)
-        _titleLabel.frame = CGRectMake(0, 100, self.frame.width, titleSize.height)
-            
-        let subtitleLabelSize = _subtitleLabel.sizeThatFits(self.frame.size)
-        _subtitleLabel.frame = CGRectMake(0, _titleLabel.frame.maxY + 10, self.frame.width, subtitleLabelSize.height)
+        _titleLabel.frame = CGRectMake(20, 80, self.frame.width, titleSize.height)
         
-        _accountTableView.frame = CGRectMake(0, _subtitleLabel.frame.maxY + 20, self.frame.width, 100);
+        _addAccountButton.sizeToFit()
+        _addAccountButton.frame = CGRectMake(self.frame.width - 20 - self._addAccountButton.frame.width,
+                                             _titleLabel.frame.midY - _addAccountButton.frame.height / 2,
+                                             _addAccountButton.frame.width,
+                                             _addAccountButton.frame.height);
         
-        _setupButton.frame = CGRectMake((self.frame.width - setupButtonRadius) / 2, self.frame.height - 200,
-                                       setupButtonRadius, setupButtonRadius)
-        
-        _sendButton.frame = CGRectMake((self.frame.width - sendButtonRadius) / 2, _setupButton.frame.minY - 110,
-                                      sendButtonRadius, sendButtonRadius)
-    }
-    
-    @objc func setupButtonAction(sender: UIButton) {
-        self.delegate?.homeViewSetupButtonTapped()
-    }
-    
-    @objc func sendButtonAction(sender: UIButton) {
-        self.delegate?.homeViewSendButtonTapped()
+        _accountTableView.frame = CGRectMake(20, _titleLabel.frame.maxY + 20, self.frame.width - 40, 400);
     }
     
 //  UITableViewDataSource
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath as IndexPath)
-        cell.textLabel!.text = _accounts![indexPath.row].name
-        return cell;
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AccountCell",
+                                                 for: indexPath) as! HLAccountTableViewCell
+        cell.configure(title: _accounts![indexPath.row].name)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,7 +83,9 @@ final class HLHomeView: UIView, UITableViewDataSource {
         return 1;
     }
     
+//    UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50;
+        return 80;
     }
+
 }

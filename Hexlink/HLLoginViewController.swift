@@ -15,7 +15,7 @@ class HLLoginViewController: UIViewController, HLLoginViewDelegate {
   
     private var loginView: HLLoginView = HLLoginView()
     private var oauthProvider: OAuthProvider!
-    
+
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         

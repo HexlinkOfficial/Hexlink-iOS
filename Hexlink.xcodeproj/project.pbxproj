@@ -16,6 +16,10 @@
 		2F1CA644290E5B0100565CEB /* HLLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1CA642290E5B0100565CEB /* HLLoginViewController.swift */; };
 		2F1CA645290E5B0100565CEB /* HLLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1CA643290E5B0100565CEB /* HLLoginView.swift */; };
 		2F594E412983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F594E402983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift */; };
+		2F6E418329EA9A1F005A645A /* HLInternalSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6E418229EA9A1F005A645A /* HLInternalSettingViewController.swift */; };
+		2F6E418529EA9A3A005A645A /* HLInternalSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6E418429EA9A3A005A645A /* HLInternalSettingView.swift */; };
+		2F6E418729F7A8AC005A645A /* HLRootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6E418629F7A8AB005A645A /* HLRootTabBarController.swift */; };
+		2F6E418929F7DD11005A645A /* HLAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6E418829F7DD11005A645A /* HLAccountTableViewCell.swift */; };
 		2F74407B29B480A8003BCBD2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 2F74407A29B480A8003BCBD2 /* FirebaseAnalytics */; };
 		2F74407D29B480A8003BCBD2 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 2F74407C29B480A8003BCBD2 /* FirebaseAnalyticsOnDeviceConversion */; };
 		2F74407F29B480A8003BCBD2 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F74407E29B480A8003BCBD2 /* FirebaseAnalyticsSwift */; };
@@ -79,6 +83,10 @@
 		2F1CA642290E5B0100565CEB /* HLLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLLoginViewController.swift; sourceTree = "<group>"; };
 		2F1CA643290E5B0100565CEB /* HLLoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HLLoginView.swift; sourceTree = "<group>"; };
 		2F594E402983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLQRCodeScannerViewController.swift; sourceTree = "<group>"; };
+		2F6E418229EA9A1F005A645A /* HLInternalSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLInternalSettingViewController.swift; sourceTree = "<group>"; };
+		2F6E418429EA9A3A005A645A /* HLInternalSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLInternalSettingView.swift; sourceTree = "<group>"; };
+		2F6E418629F7A8AB005A645A /* HLRootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLRootTabBarController.swift; sourceTree = "<group>"; };
+		2F6E418829F7DD11005A645A /* HLAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLAccountTableViewCell.swift; sourceTree = "<group>"; };
 		2F7440B029B4829E003BCBD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2FBFEEF4290F9EFE001C9F68 /* HLHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLHomeViewController.swift; sourceTree = "<group>"; };
 		2FBFEEF6290F9F10001C9F68 /* HLHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HLHomeView.swift; sourceTree = "<group>"; };
@@ -161,11 +169,15 @@
 			isa = PBXGroup;
 			children = (
 				2FD46795298CDB2F00B1E5E1 /* Hexlink.entitlements */,
+				2F6E418429EA9A3A005A645A /* HLInternalSettingView.swift */,
 				2FBFEEF6290F9F10001C9F68 /* HLHomeView.swift */,
+				2F6E418229EA9A1F005A645A /* HLInternalSettingViewController.swift */,
 				2FBFEEF4290F9EFE001C9F68 /* HLHomeViewController.swift */,
 				2F1CA643290E5B0100565CEB /* HLLoginView.swift */,
 				2F1CA642290E5B0100565CEB /* HLLoginViewController.swift */,
 				2F594E402983B4FD0067E3A8 /* HLQRCodeScannerViewController.swift */,
+				2F6E418629F7A8AB005A645A /* HLRootTabBarController.swift */,
+				2F6E418829F7DD11005A645A /* HLAccountTableViewCell.swift */,
 				2F1CA612290E597000565CEB /* AppDelegate.swift */,
 				2F1CA614290E597000565CEB /* SceneDelegate.swift */,
 				2F1CA61B290E597000565CEB /* Assets.xcassets */,
@@ -360,7 +372,11 @@
 				2FBFEEF5290F9EFE001C9F68 /* HLHomeViewController.swift in Sources */,
 				2F1CA613290E597000565CEB /* AppDelegate.swift in Sources */,
 				2F1CA615290E597000565CEB /* SceneDelegate.swift in Sources */,
+				2F6E418329EA9A1F005A645A /* HLInternalSettingViewController.swift in Sources */,
+				2F6E418729F7A8AC005A645A /* HLRootTabBarController.swift in Sources */,
+				2F6E418529EA9A3A005A645A /* HLInternalSettingView.swift in Sources */,
 				2F1CA644290E5B0100565CEB /* HLLoginViewController.swift in Sources */,
+				2F6E418929F7DD11005A645A /* HLAccountTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

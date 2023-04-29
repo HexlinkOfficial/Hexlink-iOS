@@ -87,7 +87,7 @@ class HLQRCodeScannerViewController: UIViewController, AVCaptureMetadataOutputOb
 //MARK: Helper Methods
     
     func setNavigationBar() {
-        let closeItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.close,
+        let closeItem = UIBarButtonItem(barButtonSystemItem: .close,
                                         target: self,
                                         action: #selector(closeButtonTapped))
         self.navigationItem.leftBarButtonItem  = closeItem
